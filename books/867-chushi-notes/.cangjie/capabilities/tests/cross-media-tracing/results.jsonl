@@ -1,0 +1,7 @@
+{"case_id":"cm-edge-01","run":1,"selected_skill":"none","reason":"仅要求术语定义和概念区分，不需要跨介质迁移、转化或暴露路径分析。"}
+{"case_id":"cm-neg-01","run":1,"selected_skill":"none","reason":"这是查询现行镉土壤标准数值，属于规范检索，不匹配这些能力卡的分析流程。"}
+{"case_id":"cm-pos-01","run":1,"selected_skill":"cross-media-tracing","reason":"要求沿土壤、作物、食物链到人体追踪迁移、形态变化和暴露路径。"}
+{"case_id":"cm-pos-02","run":1,"selected_skill":"cross-media-tracing","reason":"要求分析固废污染物经风扬、雨淋、挥发和淋溶跨水土气迁移。"}
+{"case_id":"cm-pos-03","run":1,"selected_skill":"cross-media-tracing","reason":"采样前要先构建农药污染物的介质、受体和暴露通道路径图。"}
+{"case_id":"cm-sib-01","run":1,"selected_skill":"context-capacity","reason":"核心是枯水期条件下排放负荷与河流纳污能力、超载状态的比较。"}
+{"case_id":"cm-sib-02","run":1,"selected_skill":"monitoring-data","reason":"核心是应急监测布点、频次及空白和校准等QA/QC设计。"}

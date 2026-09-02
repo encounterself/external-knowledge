@@ -13,6 +13,7 @@
 | `db/` | 数据库（MongoDB / MySQL / PostgreSQL） |
 | `ops/` | 运维、网络、Nginx、跳板机 |
 | `misc/` | 其他未分类 |
+| `books/` | 书籍和长文的学习资料、蒸馏产物与可执行 Skill |
 
 ## 命名约定
 

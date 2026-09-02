@@ -1,0 +1,8 @@
+# Cangjie transient build artifacts
+**/.cangjie/cache/
+**/.cangjie/normalized/
+**/.cangjie/index/
+**/.cangjie/preview-*/
+**/.cangjie/runs/
+**/.cangjie/snapshots/
+**/.cangjie/capabilities/cards/_probe.txt

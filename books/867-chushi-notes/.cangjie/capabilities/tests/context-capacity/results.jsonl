@@ -1,0 +1,7 @@
+{"case_id":"cc-pos-01","run":1,"selected_skill":"context-capacity","reason":"问题要求判断排放在枯水期和饮用水源功能约束下是否超出环境容量。"}
+{"case_id":"cc-pos-02","run":1,"selected_skill":"context-capacity","reason":"核心是比较不同水体纳污能力与水质目标下的情境化承载差异。"}
+{"case_id":"cc-pos-03","run":1,"selected_skill":"context-capacity","reason":"要求围绕环境容量、自净能力、污染负荷及生态后果组织超载判断框架。"}
+{"case_id":"cc-sib-01","run":1,"selected_skill":"cross-media-tracing","reason":"任务明确追踪镉跨土壤、作物、食物链至人体的迁移、形态和暴露路径。"}
+{"case_id":"cc-sib-02","run":1,"selected_skill":"eutrophication-load","reason":"任务专门拆分水华的氮磷外源负荷、底泥内源释放并安排治理顺序。"}
+{"case_id":"cc-edge-01","run":1,"selected_skill":"none","reason":"只要求术语定义，没有情境化容量或自净超载判断。"}
+{"case_id":"cc-neg-01","run":1,"selected_skill":"none","reason":"这是查询现行工业废水标准具体限值，已安装能力卡均不覆盖法规限值检索。"}

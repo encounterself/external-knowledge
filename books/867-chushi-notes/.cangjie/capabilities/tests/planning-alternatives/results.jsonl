@@ -1,0 +1,7 @@
+{"case_id":"pa-edge-01","run":1,"selected_skill":"none","reason":"仅要求术语定义，规划能力明确排除定义型请求。"}
+{"case_id":"pa-neg-01","run":1,"selected_skill":"none","reason":"这是查询当前环评审批法定材料的时效性法规事项，不属于方案规划比选。"}
+{"case_id":"pa-pos-01","run":1,"selected_skill":"planning-alternatives","reason":"涉及多治理方案的成本、削减量和生态风险比选，并要求从目标到实施保障组织推荐。"}
+{"case_id":"pa-pos-02","run":1,"selected_skill":"planning-alternatives","reason":"要求按工程全生命周期分析影响并比较保护措施，属于环境规划与备选方案决策。"}
+{"case_id":"pa-pos-03","run":1,"selected_skill":"planning-alternatives","reason":"直接要求按目标可达、技术可行、生态风险和实施条件进行多目标方案权衡。"}
+{"case_id":"pa-sib-01","run":1,"selected_skill":"monitoring-data","reason":"明确要求监测目的、点位、频次、QA/QC及有效数据规则，正是监测设计闭环。"}
+{"case_id":"pa-sib-02","run":1,"selected_skill":"context-capacity","reason":"要按不同功能水体判断工业排放是否超过环境容量，属于情境化容量判定。"}

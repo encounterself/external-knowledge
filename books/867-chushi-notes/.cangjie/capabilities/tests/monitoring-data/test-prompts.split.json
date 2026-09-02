@@ -1,0 +1,15 @@
+{
+  "suite_id": "suite-867-monitoring-v1",
+  "seed": 17,
+  "train": [
+    "md-sib-02",
+    "md-pos-01",
+    "md-pos-02",
+    "md-edge-01"
+  ],
+  "validation": [
+    "md-pos-03",
+    "md-sib-01",
+    "md-neg-01"
+  ]
+}

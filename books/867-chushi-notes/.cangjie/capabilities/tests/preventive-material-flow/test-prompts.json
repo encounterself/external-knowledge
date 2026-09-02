@@ -1,0 +1,61 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-preventive-v1",
+    "skill":  "preventive-material-flow",
+    "target":  "preventive-material-flow",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "pm-pos-01",
+                              "prompt":  "工厂目前只计划增加焚烧和填埋设施，如何从原料、工艺、产品、回用和残余物层级重做污染预防方案？",
+                              "expected_behavior":  "调用 preventive-material-flow，按物料流优先级前移控制。",
+                              "notes":  "正向：末端转源头",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "pm-pos-02",
+                              "prompt":  "请用清洁生产和3R分析一个企业怎样减少有毒原料、工艺损失、废物产生和生命周期环境代价。",
+                              "expected_behavior":  "调用 preventive-material-flow，输出输入—过程—产品—循环—残余链。",
+                              "notes":  "正向：清洁生产",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "pm-pos-03",
+                              "prompt":  "一个所谓资源化方案把含污染物的废渣直接用于产品，如何审查它是否只是污染转移？",
+                              "expected_behavior":  "调用 preventive-material-flow，检查危险性、产品去向、二次污染和兜底处理。",
+                              "notes":  "正向：循环安全",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "pm-sib-01",
+                              "sibling_target":  "soil-remediation",
+                              "prompt":  "已有污染土壤需要按污染物挥发性、土质和地下水条件选择修复技术，怎么比选？",
+                              "expected_behavior":  "不调用 preventive-material-flow，转到 soil-remediation。",
+                              "notes":  "兄弟诱饵：既有污染修复",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "pm-neg-01",
+                              "prompt":  "请查某行业现行危险废物处置标准和许可证要求。",
+                              "expected_behavior":  "不调用本能力，执行时效性规范查询。",
+                              "notes":  "负向：法规查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "pm-sib-02",
+                              "sibling_target":  "monitoring-data",
+                              "prompt":  "请设计工厂排放监测的采样点、频次、空白样和检出限处理。",
+                              "expected_behavior":  "不调用 preventive-material-flow，转到 monitoring-data。",
+                              "notes":  "兄弟诱饵：监测设计",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "pm-edge-01",
+                              "prompt":  "只背诵‘清洁生产’和‘循环经济’的定义，不要求分析企业方案。",
+                              "expected_behavior":  "优先查共享词典，不必激活物料流决策卡。",
+                              "notes":  "边界：纯定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

@@ -1,0 +1,62 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-agro-loop-v1",
+    "skill":  "agro-resource-loop",
+    "target":  "agro-resource-loop",
+    "router_entry":  "867-environmental-router",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "ar-pos-01",
+                              "prompt":  "养殖场想把全部粪污直接还田，但周边农田面积有限且雨季将至。请判断消纳、储存和替代去向。",
+                              "expected_behavior":  "经来源路由到 agro-resource-loop，核对数量、容量、季节、储存与物流。",
+                              "notes":  "正向：受纳能力约束",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "ar-pos-02",
+                              "prompt":  "请设计一个种养循环生态农业系统，要求副产物再循环、维持土壤肥力，并考虑病原体、经济和运输限制。",
+                              "expected_behavior":  "经来源路由到 agro-resource-loop，构造真实闭环并保留安全与可维持性检查。",
+                              "notes":  "正向：生态农业设计",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "ar-pos-03",
+                              "prompt":  "沼渣沼液被称为资源，但农田已有养分饱和迹象。请给出能否资源化及下一步调查逻辑。",
+                              "expected_behavior":  "经来源路由到 agro-resource-loop，不把资源化等同于无条件还田。",
+                              "notes":  "正向：资源化边界",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "ar-sib-01",
+                              "sibling_target":  "preventive-material-flow",
+                              "prompt":  "普通制造企业如何从原料替代、工艺优化、产品设计和回收降低废物产生？",
+                              "expected_behavior":  "不调用 agro-resource-loop，转到 preventive-material-flow。",
+                              "notes":  "兄弟诱饵：一般物料流",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "ar-neg-01",
+                              "prompt":  "请查现行畜禽粪污还田的法定施用上限和地方标准。",
+                              "expected_behavior":  "不调用本能力，要求核验当前标准。",
+                              "notes":  "负向：现行规范",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "ar-sib-02",
+                              "sibling_target":  "context-capacity",
+                              "prompt":  "枯水期河流对某工业排放的纳污能力是否足够？",
+                              "expected_behavior":  "不调用 agro-resource-loop，转到 context-capacity。",
+                              "notes":  "兄弟诱饵：一般容量",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "ar-edge-01",
+                              "prompt":  "只解释‘生态农业’的定义，不要求设计系统或判断消纳条件。",
+                              "expected_behavior":  "优先查共享词典，不必激活闭环能力卡。",
+                              "notes":  "边界：纯定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

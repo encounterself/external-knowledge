@@ -1,0 +1,7 @@
+{"case_id":"at-pos-01","run":1,"selected_skill":"atmospheric-episode","reason":"比较两类烟雾的源、前体物、气象与二次污染物，正是大气污染事件诊断。"}
+{"case_id":"at-pos-02","run":1,"selected_skill":"atmospheric-episode","reason":"静风逆温与交通前体物共同构成污染积聚机制，且要求前体物控制。"}
+{"case_id":"at-pos-03","run":1,"selected_skill":"atmospheric-episode","reason":"NOx、VOCs、日照和盆地地形是光化学烟雾判别的核心线索。"}
+{"case_id":"at-sib-01","run":1,"selected_skill":"cross-media-tracing","reason":"问题核心是颗粒物由空气跨介质迁移至土壤、作物和人体的暴露路径。"}
+{"case_id":"at-sib-02","run":1,"selected_skill":"monitoring-data","reason":"点位、频次、校准、空白和异常值处理属于监测设计与有效数据闭环。"}
+{"case_id":"at-edge-01","run":1,"selected_skill":"none","reason":"仅询问逆温定义，不要求污染事件机制分析，超出该能力的触发范围。"}
+{"case_id":"at-neg-01","run":1,"selected_skill":"none","reason":"查询实时空气质量指数，不涉及大气污染事件机制诊断，且无对应实时查询能力。"}

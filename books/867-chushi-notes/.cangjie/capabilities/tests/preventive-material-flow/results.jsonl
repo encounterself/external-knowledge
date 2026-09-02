@@ -1,0 +1,7 @@
+{"case_id":"pm-pos-01","run":1,"selected_skill":"preventive-material-flow","reason":"要求从原料、工艺、产品、回用到残余物按层级重做污染预防，正是物料流源头减量框架。"}
+{"case_id":"pm-pos-02","run":1,"selected_skill":"preventive-material-flow","reason":"明确要求清洁生产、3R及有毒原料和生命周期减量分析，匹配生产预防与物料流层级。"}
+{"case_id":"pm-pos-03","run":1,"selected_skill":"preventive-material-flow","reason":"审查污染残渣资源化是否把污染转入产品，正对应物料流卡对资源化和污染转移的边界检查。"}
+{"case_id":"pm-edge-01","run":1,"selected_skill":"none","reason":"只要求背诵清洁生产和循环经济定义，不需要企业方案分析，超出该卡触发范围。"}
+{"case_id":"pm-neg-01","run":1,"selected_skill":"none","reason":"这是查询现行危险废物标准和许可证要求，不是污染预防物料流分析，且需依赖法规资料。"}
+{"case_id":"pm-sib-01","run":1,"selected_skill":"soil-remediation","reason":"针对既有污染土壤按污染物性质、土质和地下水条件比选修复技术，最匹配土壤修复卡。"}
+{"case_id":"pm-sib-02","run":1,"selected_skill":"monitoring-data","reason":"涉及监测布点、频次、空白样和检出限处理，核心是监测设计与数据质量闭环。"}

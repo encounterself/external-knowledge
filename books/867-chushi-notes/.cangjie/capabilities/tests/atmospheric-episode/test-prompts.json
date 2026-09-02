@@ -1,0 +1,61 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-atmospheric-v1",
+    "skill":  "atmospheric-episode",
+    "target":  "atmospheric-episode",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "at-pos-01",
+                              "prompt":  "请比较伦敦型烟雾和洛杉矶光化学烟雾的污染源、前体物、气象条件和主要二次污染物。",
+                              "expected_behavior":  "调用 atmospheric-episode，区分源化学与扩散条件。",
+                              "notes":  "正向：经典大气事件",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "at-pos-02",
+                              "prompt":  "某城市连续静风、逆温且交通繁忙，空气污染积聚。请解释形成机制并提出前体物控制措施。",
+                              "expected_behavior":  "调用 atmospheric-episode，连接交通源、逆温/扩散和控源。",
+                              "notes":  "正向：静稳天气",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "at-pos-03",
+                              "prompt":  "题干给出NOx、VOCs、强日照和盆地地形，如何判断是否可能发生光化学烟雾？",
+                              "expected_behavior":  "调用 atmospheric-episode，识别一次/二次污染和反应条件。",
+                              "notes":  "正向：前体物诊断",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "at-sib-01",
+                              "sibling_target":  "cross-media-tracing",
+                              "prompt":  "请追踪燃煤颗粒物从空气沉降到土壤、作物和人体的跨介质暴露路径。",
+                              "expected_behavior":  "不调用 atmospheric-episode，转到 cross-media-tracing。",
+                              "notes":  "兄弟诱饵：跨介质路径",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "at-neg-01",
+                              "prompt":  "请查今天某城市的实时空气质量指数。",
+                              "expected_behavior":  "不调用本能力，执行时效性信息查询。",
+                              "notes":  "负向：实时查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "at-sib-02",
+                              "sibling_target":  "monitoring-data",
+                              "prompt":  "请设计城市空气监测网络的点位、频次、校准、空白和异常值处理方案。",
+                              "expected_behavior":  "不调用 atmospheric-episode，转到 monitoring-data。",
+                              "notes":  "兄弟诱饵：监测设计",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "at-edge-01",
+                              "prompt":  "只解释‘逆温’的定义，不要求分析具体污染事件。",
+                              "expected_behavior":  "优先查共享词典，不必激活完整事件诊断卡。",
+                              "notes":  "边界：术语定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

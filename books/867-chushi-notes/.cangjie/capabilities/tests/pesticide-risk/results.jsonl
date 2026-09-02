@@ -1,0 +1,7 @@
+{"case_id":"pr-pos-01","run":1,"selected_skill":"pesticide-risk","reason":"未确认病虫害却考虑加倍用药，属于施药前预测与避免盲目加量。"}
+{"case_id":"pr-pos-02","run":1,"selected_skill":"pesticide-risk","reason":"涉及同类药连续使用后的抗性，以及天敌、漂移和残留的综合风险控制。"}
+{"case_id":"pr-pos-03","run":1,"selected_skill":"pesticide-risk","reason":"临近收获时需统筹药剂选择、施用时机和安全间隔，正是农药风险决策。"}
+{"case_id":"pr-sib-01","run":1,"selected_skill":"cross-media-tracing","reason":"核心是农药经径流、土壤、作物和食物链到人体的跨介质迁移路径。"}
+{"case_id":"pr-sib-02","run":1,"selected_skill":"monitoring-data","reason":"抽样、空白、校准、检出限和异常值处理构成监测QA/QC及有效数据审查。"}
+{"case_id":"pr-edge-01","run":1,"selected_skill":"none","reason":"只要求解释抗药性定义，不涉及施药决策或风险控制流程。"}
+{"case_id":"pr-neg-01","run":1,"selected_skill":"none","reason":"仅查询现行最大残留限量，农药风险卡明确不覆盖现行限量查询。"}

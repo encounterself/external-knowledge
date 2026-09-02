@@ -1,0 +1,7 @@
+{"case_id":"eu-sib-02","run":1,"selected_skill":"monitoring-data","reason":"问题要求湖泊监测布点、频次、样品保存和QA/QC，核心是监测设计与数据质量闭环。"}
+{"case_id":"eu-pos-01","run":1,"selected_skill":"eutrophication-load","reason":"要求拆分氮磷外源、农业面源与底泥内源并排序治理，属于富营养化负荷诊断。"}
+{"case_id":"eu-pos-02","run":1,"selected_skill":"eutrophication-load","reason":"截污后水华持续，需追查氮磷来源及内外源证据，正是富营养化负荷诊断。"}
+{"case_id":"eu-pos-03","run":1,"selected_skill":"eutrophication-load","reason":"要求组织富营养化成因、危害和防治论述，且强调负荷治理而非只打捞藻类。"}
+{"case_id":"eu-edge-01","run":1,"selected_skill":"none","reason":"仅询问富营养化术语定义，不涉及该卡要求的负荷成因或治理判断。"}
+{"case_id":"eu-sib-01","run":1,"selected_skill":"context-capacity","reason":"判断枯水期河流纳污能力及功能目标影响，属于情境化容量比较。"}
+{"case_id":"eu-neg-01","run":1,"selected_skill":"none","reason":"这是查询现行地表水标准具体限值，超出这些方法卡的触发边界。"}

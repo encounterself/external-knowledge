@@ -1,0 +1,62 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-soil-v1",
+    "skill":  "soil-remediation",
+    "target":  "soil-remediation",
+    "router_entry":  "867-environmental-router",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "sr-pos-01",
+                              "prompt":  "砂质土壤受到挥发性有机物污染，地下水较浅。请比较气相抽提和其他修复路线，并说明适用条件。",
+                              "expected_behavior":  "经来源路由到 soil-remediation，按污染物和土壤条件选型并补二次污染控制。",
+                              "notes":  "正向：场地选型",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "sr-pos-02",
+                              "prompt":  "农田重金属总量较高但暂时不能挖除，如何降低生物有效性和进入作物的风险？",
+                              "expected_behavior":  "经来源路由到 soil-remediation，讨论固定稳定、受体和长期验证。",
+                              "notes":  "正向：重金属风险",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "sr-pos-03",
+                              "prompt":  "请按污染物性质、土壤质地、地下水、受体和二次污染风险组织一道土壤修复技术比选题。",
+                              "expected_behavior":  "经来源路由到 soil-remediation，给出条件—技术—验证框架。",
+                              "notes":  "正向：考试答题",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "sr-sib-01",
+                              "sibling_target":  "preventive-material-flow",
+                              "prompt":  "企业还没有造成污染，如何从原料、工艺和产品设计前移减少废物和危险物质？",
+                              "expected_behavior":  "不调用 soil-remediation，转到 preventive-material-flow。",
+                              "notes":  "兄弟诱饵：源头预防",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "sr-neg-01",
+                              "prompt":  "请查现行土壤标准中某地区的具体筛选值。",
+                              "expected_behavior":  "不调用本能力，要求核验现行标准和区域版本。",
+                              "notes":  "负向：标准查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "sr-sib-02",
+                              "sibling_target":  "cross-media-tracing",
+                              "prompt":  "请画出污染物从土壤经地下水、作物到人的迁移和暴露路径。",
+                              "expected_behavior":  "不调用 soil-remediation，转到 cross-media-tracing。",
+                              "notes":  "兄弟诱饵：迁移路径",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "sr-edge-01",
+                              "prompt":  "只问原位修复和异位修复的名词区别，不给任何场地条件。",
+                              "expected_behavior":  "优先查共享词典；若扩展选型再调用本能力。",
+                              "notes":  "边界：定义与选型区分",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

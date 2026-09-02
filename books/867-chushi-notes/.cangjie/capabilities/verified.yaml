@@ -1,0 +1,401 @@
+schema_version: 1
+bundle_id: bundle.867-chushi-notes
+book:
+  title: "867 环境学 初试高分笔记"
+  author: "未知"
+  source_pack: "867初试笔记(1).pdf"
+  baseline_tag: "exam-handout; source-grounded; author-year-textbook-version-unknown; processed-2026-08-31"
+entry:
+  name: "867-environmental-study"
+  description: |
+    用于学习和回答《867 环境学 初试高分笔记》覆盖的环境学问题：先识别污染源或形成条件，再追踪迁移转化与受体后果，最后按源头、过程、末端、监测和管理组织可评分答案。触发信号包括“环境污染原因/危害/防治”“水气土固废农业生态”“环评、监测、QA/QC、清洁生产、循环经济”。不用于替代最新版教材、官方大纲、现行法规标准或真实工程设计。
+  core_principles:
+    - "先用环境容量与自净能力判断负荷是否在情境中超载。"
+    - "把污染物作为会迁移、转化、富集并影响受体的过程对象。"
+    - "治理优先前移到清洁原料、源头减量和过程控制，再处理残余物。"
+    - "技术选择必须匹配污染物性质、介质条件、目标、成本和二次污染风险。"
+    - "用目的驱动的监测、质量控制和评价把数据转成治理决策。"
+    - "规划先定目标并比较多方案，再安排实施保障和反馈。"
+  out_of_scope:
+    - "只要求查当前法律、排放标准、限值或最新政策的事实查询。"
+    - "没有现场数据和专业设计条件的真实工程参数、设备定型或安全决策。"
+    - "只要求背诵未经来源核验的常考概率、历史数据或作者信息。"
+  stop_conditions:
+    - "若题目要求现行法规、标准、阈值或最新真题证据，暂停套用资料并标记需要外部核验。"
+    - "若缺少污染物、介质、受体或情境条件，不得假装给出唯一工艺选择，应先列出假设和信息缺口。"
+    - "若原文表述疑似 OCR、错别字或反应式有冲突，保留原文锚点并明确不把它当作无条件事实。"
+router_entry:
+  name: "867-environmental-router"
+  description: |
+    这是《867 环境学 初试高分笔记》的来源路由入口。遇到环境学考研学习、简答/论述题、污染源—迁移—后果—防治分析、监测评价或可持续发展问题时，先按意图选择一张能力卡；富营养化、土壤修复和农业资源闭环保留在本路由内。它不替代最新版教材、官方考试大纲、现行法规标准或真实工程设计。
+promotion_budget: 8
+capabilities:
+  - capability_id: "cap.867-chushi-notes.context-capacity"
+    revision: 1
+    status: active
+    aliases: ["环境容量判断", "自净能力判断", "污染阈值分析"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "context-capacity"
+    title: "情境化环境容量与自净超载判断"
+    importance: critical
+    importance_rationale: "阶段0将容量/自净列为第一章基础语言，且独立证据跨第一、二、四、十一章；它是判断污染是否成立和规划是否超载的前置节点。"
+    one_liner: "先比较情境化输入负荷与容量/净化速率，再结合用途、污染物性质和受体后果判断是否超载。"
+    intents:
+      - "判断某排放是否构成环境污染"
+      - "分析环境容量或自净能力是否被超过"
+      - "解释同一排放在不同水体/土壤条件下的后果"
+    keywords: ["环境容量", "自净能力", "超载", "纳污能力", "carrying capacity", "self-purification", "load threshold"]
+    also_read: ["eutrophication-load", "soil-remediation", "agro-resource-loop", "planning-alternatives", "monitoring-data"]
+    card: "cards/context-capacity.md"
+    frontmatter:
+      description: "当用户要判断排放是否超出环境容量、自净能力或功能目标时使用，尤其出现低流量、用途、水质目标、污染负荷、纳污能力等信号。不要用于只查一个现行限值或直接做工程许可判断；先区分符合单一排放标准与受体情境中实际超载。"
+      tags: [decision, threshold, environmental-capacity]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L104-L106; L501-L507; L1689-L1691; L3381-L3383"
+        chunk_ids: ["ck-d8654604244e", "ck-86327a92333d", "ck-e5d57e5120ae", "ck-277f29947a9c"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；与跨介质路径追踪互补，前者判断是否超载，后者解释污染物去向。"
+
+  - capability_id: "cap.867-chushi-notes.cross-media-tracing"
+    revision: 1
+    status: active
+    aliases: ["污染迁移分析", "污染物归趋", "暴露路径追踪"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "cross-media-tracing"
+    title: "跨介质污染物迁移路径追踪"
+    importance: critical
+    importance_rationale: "阶段0把迁移转化列为全书主线；候选证据横跨第一、四、五、七章，并可连接水土气、生物和健康受体。"
+    one_liner: "沿源头—介质—迁移/转化—受体—暴露路径追踪位置、形态、毒性和生物浓缩。"
+    intents:
+      - "分析污染物会迁移到哪里"
+      - "解释污染物在环境中的转化和暴露路径"
+      - "设计跨介质污染监测点位"
+    keywords: ["污染物迁移", "跨介质", "归趋", "吸附解吸", "食物链", "pollutant fate", "exposure pathway", "multimedia"]
+    also_read: ["atmospheric-episode", "soil-remediation", "pesticide-risk", "monitoring-data"]
+    card: "cards/cross-media-tracing.md"
+    frontmatter:
+      description: "当用户问污染物如何从源头进入水、气、土、沉积物、生物或人体，或要画迁移/暴露路径时使用；触发词包括迁移、转化、吸附、淋溶、挥发、食物链、bioaccumulation。不要把它当作单纯排放限值判断或单一工艺选型。"
+      tags: [decision, pollutant-fate, exposure-pathway]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L195-L205; L1849-L1865; L2169-L2179; L2558-L2605"
+        chunk_ids: ["ck-2b89f3239e4f", "ck-eda5cafae082", "ck-7d3edce0bcbf", "ck-ee4995c08029"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；是多个污染专题和监测设计的组合能力。"
+
+  - capability_id: "cap.867-chushi-notes.eutrophication-load"
+    revision: 1
+    status: active
+    aliases: ["富营养化诊断", "氮磷负荷分析", "水华成因"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "eutrophication-load"
+    title: "富营养化外源—内源负荷诊断"
+    importance: high
+    importance_rationale: "第二章被资料明确标为重点常考，且富营养化证据连接第一章流域案例、第二章水体机理和第七章农业面源。"
+    one_liner: "先核算点源/非点源外源氮磷，再用证据判断底泥内源释放，按顺序配置控制措施。"
+    intents:
+      - "分析水体富营养化或水华持续原因"
+      - "区分外源负荷与内源负荷"
+      - "设计氮磷削减和富营养化治理答案"
+    keywords: ["富营养化", "水华", "氮磷", "外源", "内源", "eutrophication", "internal load", "external load"]
+    also_read: ["context-capacity", "monitoring-data"]
+    card: "cards/eutrophication-load.md"
+    frontmatter:
+      description: "当用户问水华、湖泊富营养化、氮磷负荷或污水截流后仍反复藻华时使用。按外源点源/非点源调查、入湖负荷核算和底泥内源证据组织答案；不要只凭水面现象断定污水厂失效，也不要把本卡用于一般污水工艺选型。"
+      tags: [decision, eutrophication, nutrient-load]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L224-L244; L520-L540; L2523-L2526; L2542-L2545"
+        chunk_ids: ["ck-2b89f3239e4f", "ck-41abbbc3b429", "ck-ee4995c08029", "ck-2830036b8948"]
+    promotion:
+      destination: router
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: false
+        independent_eval: true
+      notes: "知识验证通过但场景较窄；保留为来源路由可达能力，不单独增加发现入口。"
+
+  - capability_id: "cap.867-chushi-notes.atmospheric-episode"
+    revision: 1
+    status: active
+    aliases: ["大气污染事件诊断", "烟雾成因分析", "光化学烟雾判断"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "atmospheric-episode"
+    title: "大气污染事件的源化学—扩散条件诊断"
+    importance: high
+    importance_rationale: "第三章是核心介质章节，证据覆盖污染事件对比、气象扩散机制和第六章城市热岛积聚，能直接形成事件诊断任务。"
+    one_liner: "同时核对一次/二次污染物、前体物反应、风场稳定度、逆温、地形和局地环流，再决定控源与预警。"
+    intents:
+      - "判断伦敦型或光化学烟雾成因"
+      - "分析大气污染为何在某天气积聚"
+      - "提出前体物控制和气象关联监测措施"
+    keywords: ["大气扩散", "逆温", "光化学烟雾", "前体物", "NOx", "VOCs", "smog", "dispersion", "inversion"]
+    also_read: ["cross-media-tracing", "monitoring-data"]
+    card: "cards/atmospheric-episode.md"
+    frontmatter:
+      description: "当用户给出烟雾、雾霾、大气污染积聚、逆温、静风、日照、NOx、VOCs或汽车/燃煤源时使用。先判一次/二次污染及前体物，再查风、稳定度、逆温、地形和局地环流；不要把它用于只查颗粒物定义或只选除尘设备。"
+      tags: [decision, air-pollution, atmospheric-dispersion]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L1223-L1238; L1299-L1317; L1318-L1340; L2458-L2476"
+        chunk_ids: ["ck-ca9d52329765", "ck-eb9772b994da", "ck-d957ab15d517"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；将 p09 与 p10 合并，避免扩散和光化学烟雾触发竞争。"
+
+  - capability_id: "cap.867-chushi-notes.soil-remediation"
+    revision: 1
+    status: active
+    aliases: ["土壤修复选型", "重金属修复", "原位异位修复"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "soil-remediation"
+    title: "场地与污染物约束下的土壤修复选择"
+    importance: high
+    importance_rationale: "第四章为重点介质章节，案例同时覆盖挥发性有机物、重金属、土壤渗透性、生物有效性和地下水迁移风险。"
+    one_liner: "先匹配土壤渗透性、污染物性质、深度面积和受体风险，再选择降低暴露/迁移的修复路线。"
+    intents:
+      - "比较原位和异位土壤修复"
+      - "为特定污染物和土壤条件选择修复技术"
+      - "分析重金属固定稳定与植物/电动力学修复"
+    keywords: ["土壤修复", "重金属", "生物有效性", "气相抽提", "电动力学", "soil remediation", "stabilization", "SVE"]
+    also_read: ["context-capacity", "cross-media-tracing", "preventive-material-flow"]
+    card: "cards/soil-remediation.md"
+    frontmatter:
+      description: "当用户给出土壤污染物、土质渗透性、挥发/溶解性、污染深度面积、地下水或作物暴露并要求比较修复路线时使用。不要在缺少现场勘查和工程参数时给出唯一真实方案；先做条件映射，并标注需规范和专业设计核验。"
+      tags: [decision, soil, remediation]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L1698-L1705; L1927-L1953; L2034-L2059; L2060-L2076"
+        chunk_ids: ["ck-86327a92333d", "ck-5f2fb1ce88db", "ck-eda5cafae082", "ck-e8fa1fac0839"]
+    promotion:
+      destination: router
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: false
+        independent_eval: true
+      notes: "知识验证通过但工程边界较强；以路由能力卡保留，避免把应试材料误当现场设计工具。"
+
+  - capability_id: "cap.867-chushi-notes.preventive-material-flow"
+    revision: 1
+    status: active
+    aliases: ["源头减量", "清洁生产层级", "3R物料流"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "preventive-material-flow"
+    title: "预防生产与物料流层级"
+    importance: critical
+    importance_rationale: "阶段0把预防、清洁生产、全过程控制和3R列为全书主线；证据跨第二、五、十一、十二章，且覆盖水、固废、项目评价和企业过程。"
+    one_liner: "按输入减量→过程改造→产品/再利用/再循环→不可避免残余末端处理的顺序设计方案。"
+    intents:
+      - "把末端治理方案改成源头预防方案"
+      - "设计清洁生产或循环经济措施"
+      - "按3R顺序分析企业物料流和固废治理"
+    keywords: ["清洁生产", "源头减量", "全过程控制", "3R", "循环经济", "clean production", "prevention", "material flow"]
+    also_read: ["agro-resource-loop"]
+    card: "cards/preventive-material-flow.md"
+    frontmatter:
+      description: "当用户只提出焚烧、末端处理或回收，或出现清洁生产、源头减量、全过程控制、3R、循环经济、产品生命周期等信号时使用。按输入→过程→产品/再利用/再循环→残余末端排序；不要把它用于单纯术语背诵或现行政策核验。"
+      tags: [decision, prevention, clean-production]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L581-L590; L2306-L2314; L3331-L3334; L3524-L3559; L3572-L3593"
+        chunk_ids: ["ck-7d3edce0bcbf", "ck-6cfedccb993f", "ck-e5d57e5120ae", "ck-9ccb50dc107d"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；吸收单独的源头控制、垃圾分类和清洁生产候选，保留清晰层级契约。"
+
+  - capability_id: "cap.867-chushi-notes.pesticide-risk"
+    revision: 1
+    status: active
+    aliases: ["农药风险控制", "合理施药", "农产品残留风险"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "pesticide-risk"
+    title: "预测—对症—轮换的农药风险控制"
+    importance: high
+    importance_rationale: "第七章农业污染和第八章农产品安全共同支撑该协议，第一章还提供天敌反馈案例；触发意图独立且可用情境题评测。"
+    one_liner: "先预测确认虫情，再按对象选药和剂量、轮换机制并保护天敌与受体，最后核对安全间隔和残留。"
+    intents:
+      - "制定农药使用和病虫害防治方案"
+      - "分析农药残留、抗药性或天敌损伤风险"
+      - "回答农业面源污染与农产品安全题"
+    keywords: ["农药", "病虫害预测", "抗药性", "天敌", "安全间隔期", "pesticide", "residue", "integrated pest management"]
+    also_read: ["cross-media-tracing", "monitoring-data"]
+    card: "cards/pesticide-risk.md"
+    frontmatter:
+      description: "当用户问农药怎么选、是否加大剂量、抗药性、天敌、残留、安全间隔或邻近水体农田风险时使用。先预测确认对象，采用综合防治，按对象和剂量施药并轮换，保护非靶标生物，核对残留和间隔；不要替代最新农药登记和标签要求。"
+      tags: [decision, agriculture, pesticide-risk]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L112-L117; L2572-L2621; L2758-L2803"
+        chunk_ids: ["ck-2b89f3239e4f", "ck-ee4995c08029", "ck-2830036b8948"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；与跨介质追踪组合处理残留和暴露，但触发契约聚焦施药决策。"
+
+  - capability_id: "cap.867-chushi-notes.agro-resource-loop"
+    revision: 1
+    status: active
+    aliases: ["粪污资源化", "生态农业闭环", "农田消纳能力"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "agro-resource-loop"
+    title: "受纳能力约束的农业资源闭环"
+    importance: medium
+    importance_rationale: "第七章粪污资源化与第九章生态农业均强调容量、季节、物流、种养互补和自维持；内容重要但农业养殖触发范围较窄。"
+    one_liner: "先核对农田受纳容量、季节、距离、储存和成本，再让粪污或副产物安全进入真实闭环。"
+    intents:
+      - "判断畜禽粪污能否资源化利用"
+      - "设计生态农业种养循环"
+      - "分析农田消纳能力、运输和季节约束"
+    keywords: ["畜禽粪污", "消纳能力", "生态农业", "种养循环", "digestate", "manure", "closed loop", "carrying capacity"]
+    also_read: ["context-capacity", "preventive-material-flow"]
+    card: "cards/agro-resource-loop.md"
+    frontmatter:
+      description: "当用户问畜禽粪污、沼渣沼液、农田消纳、种养循环或生态农业闭环时使用。先核算受纳容量、季节、储存、距离、规模和成本，再设计分流、资源化和替代用户；不要把‘资源化’理解为无限施肥，也不要代替现行粪污利用规范。"
+      tags: [decision, agriculture, resource-loop]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L2220-L2227; L2685-L2703; L3041-L3050; L3562-L3593"
+        chunk_ids: ["ck-2830036b8948", "ck-ee4995c08029", "ck-277f29947a9c", "ck-ac32e4ad47f7"]
+    promotion:
+      destination: router
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: false
+        independent_eval: true
+      notes: "知识验证通过但场景窄；通过来源路由提供，避免与清洁生产和容量能力重复发现。"
+
+  - capability_id: "cap.867-chushi-notes.monitoring-data"
+    revision: 1
+    status: active
+    aliases: ["环境监测闭环", "监测QA/QC", "有效数据报告"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "monitoring-data"
+    title: "目的驱动的监测与有效数据闭环"
+    importance: critical
+    importance_rationale: "第十章明确标注监测与QA/QC为重点，且该流程连接第一章流域监督、第八章产品安全和第十一章跟踪监测。"
+    one_liner: "从问题目的反推调查、点位、时频和方法，经QA/QC与有效性核验后再评价、报告并反馈治理。"
+    intents:
+      - "设计环境监测方案和采样计划"
+      - "解释监测质量保证与质量控制"
+      - "判断异常值、检出限和数据能否上报"
+    keywords: ["环境监测", "质量保证", "质量控制", "检出限", "有效数据", "environmental monitoring", "QA/QC", "data integrity"]
+    also_read: ["context-capacity", "cross-media-tracing", "eutrophication-load", "atmospheric-episode", "pesticide-risk", "planning-alternatives"]
+    card: "cards/monitoring-data.md"
+    frontmatter:
+      description: "当用户问监测目的、布点、采样频次、应急监测、QA/QC、空白/平行/加标样、检出限、极值或数据上报时使用。按目的→调查→计划→采样分析→质量控制→评价报告闭环；不要把未经核验的数字直接当事实，也不要代替现行监测标准。"
+      tags: [decision, monitoring, quality-control]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L230-L244; L2753-L2757; L3134-L3181; L3220-L3221"
+        chunk_ids: ["ck-41abbbc3b429", "ck-8675cc08f2fd", "ck-e64528f88157", "ck-f976ce42d32f"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；QA/QC细节有明确输出断言，适合机械压力测试。"
+
+  - capability_id: "cap.867-chushi-notes.planning-alternatives"
+    revision: 1
+    status: active
+    aliases: ["环境规划决策", "方案比选", "环境目标与削减量"]
+    supersedes: []
+    merged_into: null
+    split_into: []
+    slug: "planning-alternatives"
+    title: "多目标环境规划的备选方案决策"
+    importance: high
+    importance_rationale: "第十一章规划章节明确要求目标、削减量、多方案比较和实施保证；第九章生态规划与第一章大型工程案例提供跨域决策证据。"
+    one_liner: "先按功能和现状定目标、算削减量，再比较多方案的技术、经济、生态风险和实施保障。"
+    intents:
+      - "制定环境规划或区域综合治理方案"
+      - "比较多个环境工程或生态治理备选方案"
+      - "分析环评、目标设定和污染削减量分配"
+    keywords: ["环境规划", "方案比选", "污染削减量", "环境目标", "环评", "environmental planning", "alternatives", "feasibility"]
+    also_read: ["context-capacity", "monitoring-data"]
+    card: "cards/planning-alternatives.md"
+    frontmatter:
+      description: "当用户要做环境规划、区域综合治理、环评方案比较或问多个治理方案如何选时使用。先调查评价和按功能定目标，计算/分配削减量，再从技术、经济、目标达成、生态风险、分期和实施保障比较；不要只选最低成本，也不要代替现行环评法规。"
+      tags: [decision, planning, alternatives]
+    source_evidence:
+      - source_id: "src-867-notes"
+        version_id: "sha256:3f788e854bdb0fd2840de6ce096fe0549efd20eeb25ff425566a3603a445628f"
+        location: "extracted.txt:L284-L301; L3060-L3076; L3374-L3397"
+        chunk_ids: ["ck-2b89f3239e4f", "ck-e5d57e5120ae", "ck-f976ce42d32f"]
+    promotion:
+      destination: promoted
+      gate:
+        independent_intent: true
+        independent_contract: true
+        independent_run: true
+        independent_reuse: true
+        independent_eval: true
+      notes: "七个独立入口之一；与监测闭环和容量判断组合构成规划证据链。"

@@ -1,0 +1,15 @@
+{
+  "suite_id": "suite-867-context-capacity-v1",
+  "seed": 17,
+  "train": [
+    "cc-sib-02",
+    "cc-pos-01",
+    "cc-pos-02",
+    "cc-edge-01"
+  ],
+  "validation": [
+    "cc-pos-03",
+    "cc-sib-01",
+    "cc-neg-01"
+  ]
+}

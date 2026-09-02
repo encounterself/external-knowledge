@@ -1,0 +1,7 @@
+{"case_id":"ar-pos-01","run":1,"selected_skill":"agro-resource-loop","reason":"粪污还田涉及农田消纳容量、储存、季节和替代去向，属于农业资源闭环判断。"}
+{"case_id":"ar-sib-02","run":1,"selected_skill":"context-capacity","reason":"问题聚焦枯水期河流对工业排放的情境化纳污能力与超载判断。"}
+{"case_id":"ar-pos-02","run":1,"selected_skill":"agro-resource-loop","reason":"种养循环、农业副产物回流、土壤肥力及病原体和物流约束与该卡直接匹配。"}
+{"case_id":"ar-edge-01","run":1,"selected_skill":"none","reason":"仅要求解释生态农业定义，没有系统设计、资源去向或消纳条件判断。"}
+{"case_id":"ar-pos-03","run":1,"selected_skill":"agro-resource-loop","reason":"沼渣沼液还田与农田养分饱和直接触发农业资源化、受纳容量和调查逻辑。"}
+{"case_id":"ar-neg-01","run":1,"selected_skill":"none","reason":"这是查询现行法定上限和地方标准，超出能力卡范围，不能用其替代法规检索。"}
+{"case_id":"ar-sib-01","run":1,"selected_skill":"preventive-material-flow","reason":"普通制造企业的原料替代、工艺优化、产品设计和回收属于生产预防与物料流层级。"}

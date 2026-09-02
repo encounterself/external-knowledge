@@ -1,0 +1,61 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-planning-v1",
+    "skill":  "planning-alternatives",
+    "target":  "planning-alternatives",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "pa-pos-01",
+                              "prompt":  "区域环境规划有三个治理方案，成本、削减量和生态风险不同。请从现状调查、目标、削减量、方案比选和实施保障组织推荐逻辑。",
+                              "expected_behavior":  "调用 planning-alternatives，进行多目标、多方案和分期比较。",
+                              "notes":  "正向：规划比选",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "pa-pos-02",
+                              "prompt":  "一个大型工程需要分析设计、施工和运营阶段的环境影响，并比较工程和生态保护措施。怎么安排环评与环境规划？",
+                              "expected_behavior":  "调用 planning-alternatives，按空间/阶段/目标构造备选方案并反馈。",
+                              "notes":  "正向：工程规划",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "pa-pos-03",
+                              "prompt":  "请解释为什么环境规划不能只选最便宜的方案，还要看目标可达、技术可行、生态风险和实施条件。",
+                              "expected_behavior":  "调用 planning-alternatives，输出综合比较契约。",
+                              "notes":  "正向：决策原则",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "pa-sib-01",
+                              "sibling_target":  "monitoring-data",
+                              "prompt":  "请为规划基线调查设计监测目的、点位、频次、QA/QC和有效数据规则。",
+                              "expected_behavior":  "不调用 planning-alternatives，转到 monitoring-data。",
+                              "notes":  "兄弟诱饵：监测证据",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "pa-neg-01",
+                              "prompt":  "请查当前项目环评审批需要提交哪些法定材料。",
+                              "expected_behavior":  "不调用本能力，要求核验现行法规和地方流程。",
+                              "notes":  "负向：法规查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "pa-sib-02",
+                              "sibling_target":  "context-capacity",
+                              "prompt":  "请判断某工业排放在不同功能水体中是否超过环境容量。",
+                              "expected_behavior":  "不调用 planning-alternatives，转到 context-capacity。",
+                              "notes":  "兄弟诱饵：容量约束",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "pa-edge-01",
+                              "prompt":  "只解释‘环境规划’的名词定义，不要求比较方案或制定目标。",
+                              "expected_behavior":  "优先查共享词典，不必激活多方案决策卡。",
+                              "notes":  "边界：纯定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

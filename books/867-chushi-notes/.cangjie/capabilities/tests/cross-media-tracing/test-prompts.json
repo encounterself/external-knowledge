@@ -1,0 +1,61 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-cross-media-v1",
+    "skill":  "cross-media-tracing",
+    "target":  "cross-media-tracing",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "cm-pos-01",
+                              "prompt":  "请追踪镉从农田土壤经作物、食物链到人体的迁移、形态变化和暴露路径。",
+                              "expected_behavior":  "调用 cross-media-tracing，画出源—介质—受体路径并解释迁移转化。",
+                              "notes":  "正向：生物链暴露",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "cm-pos-02",
+                              "prompt":  "固体废物露天堆放后，污染物可能如何通过风扬、雨淋、挥发和淋溶进入水、土和大气？",
+                              "expected_behavior":  "调用 cross-media-tracing，按机械、物理化学和生物过程追踪跨介质路径。",
+                              "notes":  "正向：固废二次污染",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "cm-pos-03",
+                              "prompt":  "我要为一个农药污染场地设计采样点，请先分析污染物会去哪些介质、经过哪些受体和暴露通道。",
+                              "expected_behavior":  "调用 cross-media-tracing，先构建迁移路径再定位监测节点。",
+                              "notes":  "正向：路径驱动采样",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "cm-sib-01",
+                              "sibling_target":  "context-capacity",
+                              "prompt":  "枯水期河流纳污能力下降，同一排放是否会从可接受变成超载？",
+                              "expected_behavior":  "不调用 cross-media-tracing，转到 context-capacity。",
+                              "notes":  "兄弟诱饵：容量判断",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "cm-neg-01",
+                              "prompt":  "请查现行土壤环境标准里镉的筛选值和管制值。",
+                              "expected_behavior":  "不调用本能力，提示需要核验现行标准版本。",
+                              "notes":  "负向：法规事实查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "cm-sib-02",
+                              "sibling_target":  "monitoring-data",
+                              "prompt":  "请设计一次应急监测的点位、频次、空白样和校准方案。",
+                              "expected_behavior":  "不调用 cross-media-tracing，转到 monitoring-data。",
+                              "notes":  "兄弟诱饵：监测契约",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "cm-edge-01",
+                              "prompt":  "只解释‘生物放大’的定义，并区分它和生物富集、生物积累。",
+                              "expected_behavior":  "优先查共享词典，不必展开完整迁移路径。",
+                              "notes":  "边界：术语解释",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

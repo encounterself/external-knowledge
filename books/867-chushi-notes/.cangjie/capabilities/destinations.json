@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle.867-chushi-notes",
+  "destinations": {
+    "cap.867-chushi-notes.context-capacity": {
+      "promoted_to": "context-capacity"
+    },
+    "cap.867-chushi-notes.cross-media-tracing": {
+      "promoted_to": "cross-media-tracing"
+    },
+    "cap.867-chushi-notes.eutrophication-load": {
+      "served_by": "867-environmental-router"
+    },
+    "cap.867-chushi-notes.atmospheric-episode": {
+      "promoted_to": "atmospheric-episode"
+    },
+    "cap.867-chushi-notes.soil-remediation": {
+      "served_by": "867-environmental-router"
+    },
+    "cap.867-chushi-notes.preventive-material-flow": {
+      "promoted_to": "preventive-material-flow"
+    },
+    "cap.867-chushi-notes.pesticide-risk": {
+      "promoted_to": "pesticide-risk"
+    },
+    "cap.867-chushi-notes.agro-resource-loop": {
+      "served_by": "867-environmental-router"
+    },
+    "cap.867-chushi-notes.monitoring-data": {
+      "promoted_to": "monitoring-data"
+    },
+    "cap.867-chushi-notes.planning-alternatives": {
+      "promoted_to": "planning-alternatives"
+    }
+  }
+}

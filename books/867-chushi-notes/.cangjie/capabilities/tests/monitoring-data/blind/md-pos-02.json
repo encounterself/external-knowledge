@@ -1,0 +1,19 @@
+{
+  "case_id": "md-pos-02",
+  "runs": 3,
+  "prompt": "监测数据出现低于检出限的结果和一个极端值，哪些QA/QC检查后才能评价和上报？",
+  "instruction": "你是一个未参与蒸馏的干净 agent。给定用户 prompt 与已安装 skill 清单，判断该激活哪一个 skill（或 none）。输出 JSON: {\"selected_skill\": \"<slug>|none\", \"reason\": \"...\"}。每条 prompt 独立判断，重复运行之间不携带记忆。",
+  "installed_skills": [
+    "context-capacity",
+    "cross-media-tracing",
+    "eutrophication-load",
+    "atmospheric-episode",
+    "soil-remediation",
+    "preventive-material-flow",
+    "pesticide-risk",
+    "agro-resource-loop",
+    "monitoring-data",
+    "planning-alternatives",
+    "867-environmental-router"
+  ]
+}

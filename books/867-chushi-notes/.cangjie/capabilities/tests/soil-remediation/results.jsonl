@@ -1,0 +1,7 @@
+{"case_id":"sr-pos-01","run":1,"selected_skill":"soil-remediation","reason":"已有砂质土壤挥发性有机物污染，要求结合场地条件比较修复路线，属于场地化土壤修复选型。"}
+{"case_id":"sr-sib-02","run":1,"selected_skill":"cross-media-tracing","reason":"要求追踪污染物从土壤经地下水、作物到人的迁移与暴露路径，核心是跨介质追踪。"}
+{"case_id":"sr-pos-02","run":1,"selected_skill":"soil-remediation","reason":"针对既有农田重金属污染降低生物有效性和作物暴露，属于土壤修复风险控制。"}
+{"case_id":"sr-edge-01","run":1,"selected_skill":"none","reason":"仅询问原位与异位术语区别且没有场地条件，超出土壤修复卡的适用边界。"}
+{"case_id":"sr-pos-03","run":1,"selected_skill":"soil-remediation","reason":"按污染物、土质、地下水、受体及二次污染风险进行技术比选，直接匹配土壤修复。"}
+{"case_id":"sr-neg-01","run":1,"selected_skill":"none","reason":"查询现行地区土壤筛选值属于标准法规检索，现有能力卡不直接覆盖。"}
+{"case_id":"sr-sib-01","run":1,"selected_skill":"preventive-material-flow","reason":"污染尚未发生，要求从原料、工艺和产品设计前移减废，匹配源头预防物料流。"}

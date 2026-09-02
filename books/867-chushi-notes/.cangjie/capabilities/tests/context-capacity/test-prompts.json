@@ -1,0 +1,61 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-context-capacity-v1",
+    "skill":  "context-capacity",
+    "target":  "context-capacity",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "cc-pos-01",
+                              "prompt":  "枯水期某排污口虽然符合排放标准，但下游饮用水源区水质恶化。请判断是否可能超出环境容量，并列出需要的条件。",
+                              "expected_behavior":  "调用 context-capacity，比较情境化负荷、功能用途、自净和受体后果。",
+                              "notes":  "正向：容量与合规边界",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "cc-pos-02",
+                              "prompt":  "同样的氮排放进入大河和小型封闭湖泊，为什么环境影响可能不同？请用纳污能力和水质目标解释。",
+                              "expected_behavior":  "调用 context-capacity，说明水文、用途、背景负荷和容量差异。",
+                              "notes":  "正向：跨水体情境比较",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "cc-pos-03",
+                              "prompt":  "请用环境容量、自净能力、污染负荷和生态后果，组织一道考研简答题的答题框架。",
+                              "expected_behavior":  "调用 context-capacity，输出条件—负荷—能力—后果—控制链。",
+                              "notes":  "正向：考试答题",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "cc-sib-01",
+                              "sibling_target":  "cross-media-tracing",
+                              "prompt":  "请追踪镉从农田土壤经作物、食物链到人体的迁移、形态变化和暴露路径。",
+                              "expected_behavior":  "不调用 context-capacity，转到 cross-media-tracing。",
+                              "notes":  "兄弟诱饵：迁移路径",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "cc-neg-01",
+                              "prompt":  "请查一下现行工业废水排放标准中某污染物的具体限值。",
+                              "expected_behavior":  "不调用本能力，提示需要指定现行法规或标准来源。",
+                              "notes":  "负向：时效性事实查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "cc-sib-02",
+                              "sibling_target":  "eutrophication-load",
+                              "prompt":  "湖泊截污后仍反复暴发水华，请区分氮磷外源负荷和底泥内源释放并安排治理顺序。",
+                              "expected_behavior":  "不调用 context-capacity，转到 eutrophication-load。",
+                              "notes":  "边界兄弟：富营养化专门诊断",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "cc-edge-01",
+                              "prompt":  "只请解释‘环境容量’这个名词的定义，不需要分析具体排放情境。",
+                              "expected_behavior":  "优先查共享词典，不必激活决策能力卡。",
+                              "notes":  "边界：纯术语定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

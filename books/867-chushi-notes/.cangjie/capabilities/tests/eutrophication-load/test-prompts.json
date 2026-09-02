@@ -1,0 +1,62 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-eutrophication-v1",
+    "skill":  "eutrophication-load",
+    "target":  "eutrophication-load",
+    "router_entry":  "867-environmental-router",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "eu-pos-01",
+                              "prompt":  "湖泊反复暴发水华，请区分氮磷外源负荷、农业面源和底泥内源释放，并安排治理顺序。",
+                              "expected_behavior":  "经 867-environmental-router 到达 eutrophication-load，拆分来源并排序治理。",
+                              "notes":  "正向：内外源诊断",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "eu-pos-02",
+                              "prompt":  "污水截流后藻类仍大量繁殖，应该调查哪些氮磷来源和水体指标？",
+                              "expected_behavior":  "经来源路由到 eutrophication-load，提出外源核算、内源验证和复测指标。",
+                              "notes":  "正向：截污后复发",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "eu-pos-03",
+                              "prompt":  "请写一道富营养化论述题的成因—危害—防治答案，不能只写‘打捞藻类’。",
+                              "expected_behavior":  "经来源路由到 eutrophication-load，连接负荷、缺氧和分层治理。",
+                              "notes":  "正向：考试论述",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "eu-sib-01",
+                              "sibling_target":  "context-capacity",
+                              "prompt":  "请判断同一氮排放在枯水期河流中是否超过纳污能力，并说明功能目标的作用。",
+                              "expected_behavior":  "经来源路由转到 context-capacity，不直接调用 eutrophication-load。",
+                              "notes":  "兄弟诱饵：一般容量",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "eu-neg-01",
+                              "prompt":  "请查某地现行地表水环境质量标准的总磷限值。",
+                              "expected_behavior":  "不调用本能力，要求核验现行标准。",
+                              "notes":  "负向：标准查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "eu-sib-02",
+                              "sibling_target":  "monitoring-data",
+                              "prompt":  "请制定湖泊常规监测的点位、频次、样品保存和QA/QC流程。",
+                              "expected_behavior":  "经来源路由转到 monitoring-data。",
+                              "notes":  "兄弟诱饵：监测设计",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "eu-edge-01",
+                              "prompt":  "只问‘富营养化’这个名词是什么意思，不要求成因或治理。",
+                              "expected_behavior":  "优先查共享词典，不必激活完整诊断卡。",
+                              "notes":  "边界：纯定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}

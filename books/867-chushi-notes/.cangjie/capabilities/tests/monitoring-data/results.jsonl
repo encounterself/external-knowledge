@@ -1,0 +1,7 @@
+{"case_id":"md-edge-01","run":1,"selected_skill":"none","reason":"仅询问QA/QC术语区别，不涉及监测设计或数据审查，属于监测卡边界外。"}
+{"case_id":"md-neg-01","run":1,"selected_skill":"none","reason":"这是未指定规范版本的现行国家标准检索，不是监测设计或有效数据审查。"}
+{"case_id":"md-pos-01","run":1,"selected_skill":"monitoring-data","reason":"要求完整河流应急监测设计，涵盖目的、点位、因子、时频、分工和报告闭环。"}
+{"case_id":"md-pos-02","run":1,"selected_skill":"monitoring-data","reason":"同时涉及检出限、极端值和QA/QC后的评价上报，正对应有效数据闭环。"}
+{"case_id":"md-pos-03","run":1,"selected_skill":"monitoring-data","reason":"长期水质趋势监测需按目的、调查、点位时频、质控和反馈安排完整监测计划。"}
+{"case_id":"md-sib-01","run":1,"selected_skill":"eutrophication-load","reason":"核心是水华的氮磷外源与底泥内源诊断及治理排序。"}
+{"case_id":"md-sib-02","run":1,"selected_skill":"planning-alternatives","reason":"核心是比较多个区域治理方案的投资、削减量、生态风险和分期可行性。"}

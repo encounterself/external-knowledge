@@ -1,0 +1,40 @@
+{
+  "tool": "cangjie-tools v2.5.0",
+  "published_hashes": {
+    "references\\capabilities\\agro-resource-loop.md": "8c5165e757db62b9e86fa2fa376a29489072424f480204351f4b45b888fdacf0",
+    "references\\capabilities\\atmospheric-episode.md": "cb72c5f88779888c5bba60eeb83bbebbd93633d2be3b08a65de4f11d23b145c5",
+    "references\\capabilities\\context-capacity.md": "8f3a7ca23b60392d85d490f4e945345dc1cb44add78d1d612ec8ae14e679445f",
+    "references\\capabilities\\cross-media-tracing.md": "78b27386a8ff0460b9f88af1724c0afe0a2b80649c5d4d1d2884669feb286556",
+    "references\\capabilities\\eutrophication-load.md": "fbf90ebc10fbd8353b14946cd29889027ff2709f34957f9deb9c0c18091f6562",
+    "references\\capabilities\\monitoring-data.md": "c89d1ab80d85c79f026b5fc5c5808598cd92430aa7319517fd84946df458073c",
+    "references\\capabilities\\pesticide-risk.md": "a49c95131ea9fb7298654566e3878edfaba01c1bca15503b4b538fd0de85bc86",
+    "references\\capabilities\\planning-alternatives.md": "439797448cfb94df62a50eb8e583f63c89d13137e3066036538a0ec5f4ef9f78",
+    "references\\capabilities\\preventive-material-flow.md": "531a85b197507f1011c99a53f7c9a6e05c0300e01c6e10322233118edecd9895",
+    "references\\capabilities\\soil-remediation.md": "9a9d41f504ea7a54a0ba9e238a59a13c304ed0e20306f77e0342af7dcf722a34",
+    "references\\capability-index.md": "451db6db84a10321fb841a28c70b25f594c2dc4e5c74d6cf20504d42e444b3e2",
+    "references\\cheatsheet.md": "111ef3c1fc1b1c88631772fcdc1e5b238fa8fbcfc772bf8eb26b241e8025f659",
+    "references\\glossary.md": "f7cd22fde67a5369b220dcb4107b139113793c6391499987362ea6196a481b7b",
+    "references\\overview.md": "074671444b282fc4d1874c6983345af19c672e291dbee18e10239ad0c54734da",
+    "SKILL.md": "c74ef3bc9f6eeee6782c7ef6100233f51a6dfb7b1d9f7449200d97ae70559791"
+  },
+  "note": "update/重编译前比对 published_hashes；检测到本地手改不得静默覆盖",
+  "bundle_id": "bundle.867-chushi-notes",
+  "bundle_sha256": "54c7dbb9ceb526b3772766ffac318b434c031ff266c78815a73e712fd106447d",
+  "variant": "single",
+  "run_id": "run-20260902-152513-412027",
+  "decision": {
+    "schema_version": 1,
+    "requested": "single",
+    "selected": "single",
+    "decision_policy": "single-first-v1",
+    "skill_budget": 8,
+    "promoted_count": 7,
+    "capability_count": 10,
+    "reasons": [
+      "用户显式选择 single，auto 决策器不覆盖用户选择"
+    ],
+    "alternative": "compact pack（1 个来源路由入口 + 7 个晋级 Skill，共 8 个可发现入口）",
+    "user_confirmed": true,
+    "preserve_strategy_on_update": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+    "schema_version":  1,
+    "suite_id":  "suite-867-monitoring-v1",
+    "skill":  "monitoring-data",
+    "target":  "monitoring-data",
+    "split_seed":  17,
+    "train_ratio":  0.6,
+    "trigger_cases":  [
+                          {
+                              "case_id":  "md-pos-01",
+                              "prompt":  "请为一次河流污染应急监测设计目的、点位、因子、时频、采样分工和报告流程。",
+                              "expected_behavior":  "调用 monitoring-data，从决策目的出发设计监测并闭合报告。",
+                              "notes":  "正向：应急设计",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "md-pos-02",
+                              "prompt":  "监测数据出现低于检出限的结果和一个极端值，哪些QA/QC检查后才能评价和上报？",
+                              "expected_behavior":  "调用 monitoring-data，说明有效数据、检出限、异常值和质量控制。",
+                              "notes":  "正向：数据审查",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "md-pos-03",
+                              "prompt":  "我想长期判断湖泊水质趋势，预算有限。请按目的、现场调查、点位时频、空白平行样和反馈安排监测。",
+                              "expected_behavior":  "调用 monitoring-data，输出目的驱动的监测闭环。",
+                              "notes":  "正向：趋势监测",
+                              "expected":  "should_trigger"
+                          },
+                          {
+                              "case_id":  "md-sib-01",
+                              "sibling_target":  "eutrophication-load",
+                              "prompt":  "湖泊水华反复发生，请判断是氮磷外源还是底泥内源主导，并排序治理。",
+                              "expected_behavior":  "不调用 monitoring-data，转到 eutrophication-load；必要时再补监测。",
+                              "notes":  "兄弟诱饵：富营养化诊断",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "md-neg-01",
+                              "prompt":  "请查当前国家标准规定的某污染物采样保存温度和方法检出限。",
+                              "expected_behavior":  "不调用本能力，要求指定并核验现行方法标准。",
+                              "notes":  "负向：标准事实查询",
+                              "expected":  "should_not_trigger"
+                          },
+                          {
+                              "case_id":  "md-sib-02",
+                              "sibling_target":  "planning-alternatives",
+                              "prompt":  "请比较三个区域治理方案的投资、削减量、生态风险和分期实施可行性。",
+                              "expected_behavior":  "不调用 monitoring-data，转到 planning-alternatives。",
+                              "notes":  "兄弟诱饵：规划比选",
+                              "expected":  "sibling"
+                          },
+                          {
+                              "case_id":  "md-edge-01",
+                              "prompt":  "只问‘QA和QC有什么区别’，不要求设计监测或审查数据。",
+                              "expected_behavior":  "优先查共享词典，不必激活完整监测闭环卡。",
+                              "notes":  "边界：术语定义",
+                              "expected":  "edge_case"
+                          }
+                      ]
+}
