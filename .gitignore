@@ -6,3 +6,10 @@
 **/.cangjie/runs/
 **/.cangjie/snapshots/
 **/.cangjie/capabilities/cards/_probe.txt
+
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Tauri build output
+src-tauri/target/

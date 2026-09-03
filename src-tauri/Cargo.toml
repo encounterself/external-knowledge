@@ -1,0 +1,20 @@
+[package]
+name = "env867-study"
+version = "0.1.0"
+description = "867 环境学本地学习工作台"
+authors = ["867 学习工作台"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+
+[lib]
+name = "env867_study_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

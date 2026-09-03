@@ -1,0 +1,22 @@
+{
+  "name": "env867-environmental-study",
+  "version": "0.1.0",
+  "description": "将 867 环境学初试笔记转成可阅读、可练习、可批改的本地学习工作台。",
+  "author": {"name": "867 学习工作台"},
+  "keywords": ["考研", "环境学", "学习", "题库"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "867 环境学学习台",
+    "shortDescription": "环境学初试阅读、练习与结构化答题",
+    "longDescription": "基于 867 环境学初试笔记，按源—过程—后果—治理组织知识与答题训练。",
+    "developerName": "867 学习工作台",
+    "category": "Education",
+    "capabilities": ["Read", "Study", "Write"],
+    "defaultPrompt": [
+      "用 867 笔记解释这个环境学概念",
+      "按源—过程—后果—治理生成一道练习题",
+      "按考研采分点批改我的环境学答案"
+    ],
+    "brandColor": "#31583e"
+  }
+}

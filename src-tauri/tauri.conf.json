@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "867 环境学学习台",
+  "version": "0.1.0",
+  "identifier": "local.env867.study",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [{
+      "title": "867 环境学学习台",
+      "width": 1280,
+      "height": 820,
+      "minWidth": 960,
+      "minHeight": 640,
+      "resizable": true
+    }],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Education",
+    "shortDescription": "面向 867 初试的本地环境学学习工作台"
+  }
+}
