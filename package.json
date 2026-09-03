@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "content:index": "node scripts/generate-book-index.mjs",
     "dev": "vite",
     "typecheck": "tsc -b",
     "build": "npm run typecheck && vite build",
