@@ -35,7 +35,9 @@ export function loadProgress(seed: Question[]): Progress {
     };
   } catch { return { ...initialProgress, questions: seed }; }
 }
-export function saveProgress(progress: Progress) { localStorage.setItem(key, JSON.stringify(progress)); }
+export function saveProgress(progress: Progress) {
+  localStorage.setItem(key, JSON.stringify({ ...progress, settings: { ...progress.settings, apiKey: '' } }));
+}
 
 export function scheduleMemory(item: MemoryItem | undefined, feedback: MemoryState, id: string, kind: MemoryItem['kind'], title: string): MemoryItem {
   const current = item ?? { id, kind, title, dueAt: new Date().toISOString(), intervalDays: 0, ease: 2.5, repetitions: 0 };

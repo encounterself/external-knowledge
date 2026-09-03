@@ -10,9 +10,10 @@
 - 主动回忆：先回忆后揭示答案，提供“再来一次 / 困难 / 记住了 / 很轻松”反馈。
 - 间隔重复：本地实现可解释 MVP，按反馈调整间隔、难度、重复次数和下次复习时间。
 - 逐题练习：输入答案、查看采分点、保存最近一次 AI 批改结果。
-- Codex 学习教练：独立聊天界面支持兼容接口对话，并提供受控的平台内容、Skill、题库、学习数据和构建工具；危险写操作显示审批卡。
+- Codex 工作台：独立聊天界面支持兼容接口对话、工具调用状态和网页导入草稿；正式写入、题目生成和构建任务必须审批。
 - OpenAI 兼容接口：设置 Base URL、API Key 和模型名称；默认模型为 `databricks-gpt-5-6-luna`。
-- 本地持久化：学习进度、题目、答案、批改和接口设置存入浏览器 `localStorage`；它不是系统级密钥保险箱，不建议在共享电脑保存 API Key。
+- 本地持久化：学习进度、题目、答案和 Base URL 存入浏览器 `localStorage`；网页端 API Key 只保留当前会话，Codex 配置推荐使用环境变量。
+- Codex 配置与 MCP：`codex/config.toml` 是仓库内配置源，运行 `npm run codex:install` 可备份并幂等合并到 `~/.codex/config.toml`；`tools/env867-mcp-server.mjs` 提供网页阅读、网页草稿和本地学习工具。
 - Codex 插件：`.codex-plugin/plugin.json` 指向 `skills/867-environmental-study/SKILL.md`，已有 867 资源保留在 `skills/867-environmental-study/resources/`。
 - Tauri 2 配置：可构建 Windows 桌面壳，应用本身不需要后端服务。
 
@@ -42,6 +43,14 @@ npm run tauri:build
 
 在“接口设置”中填写兼容 OpenAI `POST /chat/completions` 的 Base URL 与 API Key。应用不会在源码中硬编码 API Key；密钥只会按当前浏览器的 `localStorage` 机制保存。默认模型名称是 `databricks-gpt-5-6-luna`，如果你的网关使用该名称即可直接调用。
 
+Codex CLI 使用仓库内 `codex/config.toml`，推荐先设置 `OPENAI_API_KEY`、`OPENAI_BASE_URL`，再运行：
+
+```bash
+npm run codex:install
+```
+
+项目根目录的 `AGENTS.md` 会提示 Codex 自动使用 867 Skill；MCP 工具的网页导入先生成草稿，正式保存需要明确审批。
+
 AI 批改请求会携带题目、参考答案、采分点和用户答案到配置的 Base URL。未配置 API Key 时仍可使用本地阅读、能力卡、题库和答题草稿功能。
 
 ## 目录
@@ -57,9 +66,9 @@ books/867-chushi-notes/      原始整理笔记与审核产物
 
 ## 已知限制
 
-- 当前 AI 请求在前端直连用户填写的接口，存在 CORS 与客户端密钥暴露风险；正式发布前应改为 Tauri 命令调用系统安全存储或本地代理。
+- 当前 AI 请求在前端直连用户填写的接口，仍存在 CORS 与客户端密钥暴露风险；桌面正式发布前应改为 Tauri 命令调用系统安全存储或本地代理。Codex CLI 配置本身通过环境变量读取密钥。
 - `localStorage` 是 MVP 存储，不提供跨设备同步、加密或版本迁移。
 - 当前题库是小规模草稿数据；还没有批量导入、题目编辑器、账号体系和统计图表。
 - 索引全文会随前端 bundle 打包，内容继续扩展时应考虑按章节动态加载。
-- 当前教练工具已能读取前端本地索引和学习状态；真实 Codex app-server/Tauri 命令桥接仍需在桌面后端阶段接入。
+- 当前 Codex 工作台提供 API-backed 工具调用；真实 `codex app-server` 模式和 Tauri 命令桥接仍需在桌面后端阶段接入。
 - Tauri 配置已完成，但 Windows 安装包仍需在具备 Rust/C++ 工具链的 Windows 环境中实际打包验证。
