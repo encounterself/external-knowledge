@@ -30,4 +30,4 @@ npm run dev
 npm run tauri:dev
 ```
 
-API 批改默认使用 `databricks-gpt-5-6-luna`，但必须由使用者在应用设置中填写 OpenAI 兼容 Base URL 与 API Key。不要在 Skill、前端源码或资源中写入密钥。
+API 批改默认使用 `gpt-5.6-terra`，Base URL 为 `https://wawapii.com`。Codex 配置通过环境变量或本机认证提供 API Key；不要在 Skill、前端源码或资源中写入密钥。

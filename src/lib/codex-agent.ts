@@ -12,7 +12,7 @@ const toolDefinitions = [
   { type: 'function', function: { name: 'memory_inspect', description: 'Inspect local learning progress metadata.', parameters: { type: 'object', properties: {} } } },
 ];
 
-const requiredModel = 'databricks-gpt-5-6-luna';
+const requiredModel = 'gpt-5.6-terra';
 
 function localContentSearch(query: string) {
   const normalized = query.trim().toLowerCase();

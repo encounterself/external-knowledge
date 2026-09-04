@@ -11,7 +11,7 @@
 - 间隔重复：本地实现可解释 MVP，按反馈调整间隔、难度、重复次数和下次复习时间。
 - 逐题练习：输入答案、查看采分点、保存最近一次 AI 批改结果。
 - Codex 工作台：独立聊天界面支持兼容接口对话、工具调用状态和网页导入草稿；正式写入、题目生成和构建任务必须审批。
-- OpenAI 兼容接口：设置 Base URL、API Key 和模型名称；默认模型为 `databricks-gpt-5-6-luna`。
+- OpenAI 兼容接口：默认使用 `https://wawapii.com`、`gpt-5.6-terra` 和 `responses` wire API。
 - 本地持久化：学习进度、题目、答案和 Base URL 存入浏览器 `localStorage`；网页端 API Key 只保留当前会话，Codex 配置推荐使用环境变量。
 - Codex 配置与 MCP：`codex/config.toml` 是仓库内配置源，运行 `npm run codex:install` 可备份并幂等合并到 `~/.codex/config.toml`；`tools/env867-mcp-server.mjs` 提供网页阅读、网页草稿和本地学习工具。
 - Codex 插件：`.codex-plugin/plugin.json` 指向 `skills/867-environmental-study/SKILL.md`，已有 867 资源保留在 `skills/867-environmental-study/resources/`。
@@ -41,7 +41,7 @@ npm run tauri:build
 
 ## AI 设置
 
-在“接口设置”中填写兼容 OpenAI `POST /chat/completions` 的 Base URL 与 API Key。应用不会在源码中硬编码 API Key；密钥只会按当前浏览器的 `localStorage` 机制保存。默认模型名称是 `databricks-gpt-5-6-luna`，如果你的网关使用该名称即可直接调用。
+在“接口设置”中填写兼容 OpenAI 的 Base URL 与 API Key。Codex 配置默认使用 `POST /responses`、模型 `gpt-5.6-terra` 和 `https://wawapii.com`。应用不会在源码中硬编码 API Key；网页端密钥只保留当前会话，Codex CLI 应使用环境变量或本机认证。
 
 Codex CLI 使用仓库内 `codex/config.toml`，推荐先设置 `OPENAI_API_KEY`、`OPENAI_BASE_URL`，再运行：
 

@@ -1,13 +1,22 @@
 # Copy/merge this template with `npm run codex:install`.
 # Secrets are intentionally read from the environment, never committed here.
 
-model = "databricks-gpt-5-6-luna"
-model_provider = "openai_compatible"
+model = "gpt-5.6-terra"
+review_model = "gpt-5.6-terra"
+model_reasoning_effort = "xhigh"
+disable_response_storage = true
+network_access = "enabled"
+windows_wsl_setup_acknowledged = true
+model_provider = "OpenAI"
 
-[model_providers.openai_compatible]
-name = "OpenAI-compatible API"
-base_url = "${OPENAI_BASE_URL}"
-env_key = "OPENAI_API_KEY"
+[model_providers.OpenAI]
+name = "OpenAI"
+base_url = "https://wawapii.com"
+wire_api = "responses"
+requires_openai_auth = true
+
+[features]
+goals = true
 
 [mcp_servers.env867]
 command = "node"

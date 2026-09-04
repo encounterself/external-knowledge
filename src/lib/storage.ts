@@ -23,7 +23,7 @@ export type Progress = {
 
 export const initialProgress: Omit<Progress, 'questions'> = {
   read: [], answers: {}, grades: {}, memory: {},
-  settings: { baseUrl: '', apiKey: '', model: 'databricks-gpt-5-6-luna' },
+  settings: { baseUrl: 'https://wawapii.com', apiKey: '', model: 'gpt-5.6-terra' },
 };
 
 export function loadProgress(seed: Question[]): Progress {
@@ -31,7 +31,7 @@ export function loadProgress(seed: Question[]): Progress {
     const saved = JSON.parse(localStorage.getItem(key) || 'null') as Partial<Progress> | null;
     return {
       ...initialProgress, ...saved, questions: saved?.questions || seed,
-      memory: saved?.memory || {}, settings: { ...initialProgress.settings, ...saved?.settings, model: 'databricks-gpt-5-6-luna' },
+      memory: saved?.memory || {}, settings: { ...initialProgress.settings, ...saved?.settings, model: 'gpt-5.6-terra' },
     };
   } catch { return { ...initialProgress, questions: seed }; }
 }
