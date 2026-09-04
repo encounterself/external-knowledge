@@ -1,6 +1,6 @@
 # Project reference configuration. Install/merge it with `npm run codex:install`.
-model = "gpt-5.6-terra"
-review_model = "gpt-5.6-terra"
+model = "databricks-gpt-5-6-luna"
+review_model = "databricks-gpt-5-6-luna"
 model_reasoning_effort = "xhigh"
 disable_response_storage = true
 network_access = "enabled"
