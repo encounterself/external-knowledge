@@ -1,4 +1,4 @@
-export const REQUIRED_MODEL = 'databricks-gpt-5-6-luna';
+export const REQUIRED_MODEL = 'gpt-5.6-terra';
 export const DEFAULT_BASE_URL = 'https://wawapii.com';
 const TAURI_INVOKE = '__TAURI_INTERNALS__';
 

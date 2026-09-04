@@ -1,7 +1,7 @@
 # 867 原书基线记忆卡审核报告
 
 - 生成日期：2026-09-04
-- 生成模型标记：`databricks-gpt-5-6-luna`
+- 生成模型标记：`gpt-5.6-terra`
 - 来源：`books/867-chushi-notes/.cangjie/source/structured.md`
 - 覆盖章节：12/12
 - 卡片总数：48

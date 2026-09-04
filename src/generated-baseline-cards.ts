@@ -9,8 +9,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-4",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.764Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.032Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch01-concept",
@@ -32,8 +32,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-4",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.764Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.032Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch01-mechanism",
@@ -55,8 +55,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-4",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.764Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.032Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch01-governance",
@@ -78,8 +78,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-4",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.764Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.032Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch01-pitfall",
@@ -101,8 +101,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-10",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.033Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch02-concept",
@@ -124,8 +124,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-10",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.033Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch02-mechanism",
@@ -147,8 +147,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-10",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.033Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch02-governance",
@@ -170,8 +170,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-10",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.033Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch02-pitfall",
@@ -193,8 +193,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-27",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch03-concept",
@@ -216,8 +216,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-27",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch03-mechanism",
@@ -239,8 +239,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-27",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch03-governance",
@@ -262,8 +262,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-27",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.766Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch03-pitfall",
@@ -285,8 +285,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-39",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch04-concept",
@@ -308,8 +308,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-39",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch04-mechanism",
@@ -331,8 +331,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-39",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch04-governance",
@@ -354,8 +354,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-39",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.034Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch04-pitfall",
@@ -377,8 +377,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-48",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch05-concept",
@@ -400,8 +400,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-48",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch05-mechanism",
@@ -423,8 +423,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-48",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch05-governance",
@@ -446,8 +446,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-48",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch05-pitfall",
@@ -469,8 +469,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-55",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch06-concept",
@@ -492,8 +492,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-55",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch06-mechanism",
@@ -515,8 +515,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-55",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch06-governance",
@@ -538,8 +538,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-55",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch06-pitfall",
@@ -561,8 +561,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-57",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch07-concept",
@@ -584,8 +584,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-57",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch07-mechanism",
@@ -607,8 +607,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-57",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch07-governance",
@@ -630,8 +630,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-57",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.767Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch07-pitfall",
@@ -653,8 +653,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-62",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch08-concept",
@@ -676,8 +676,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-62",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch08-mechanism",
@@ -699,8 +699,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-62",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch08-governance",
@@ -722,8 +722,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-62",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch08-pitfall",
@@ -745,8 +745,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-65",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch09-concept",
@@ -768,8 +768,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-65",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch09-mechanism",
@@ -791,8 +791,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-65",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch09-governance",
@@ -814,8 +814,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-65",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch09-pitfall",
@@ -837,8 +837,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-70",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch10-concept",
@@ -860,8 +860,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-70",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch10-mechanism",
@@ -883,8 +883,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-70",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch10-governance",
@@ -906,8 +906,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-70",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.035Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch10-pitfall",
@@ -929,8 +929,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-73",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch11-concept",
@@ -952,8 +952,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-73",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch11-mechanism",
@@ -975,8 +975,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-73",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch11-governance",
@@ -998,8 +998,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-73",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch11-pitfall",
@@ -1021,8 +1021,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-78",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch12-concept",
@@ -1044,8 +1044,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-78",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch12-mechanism",
@@ -1067,8 +1067,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-78",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch12-governance",
@@ -1090,8 +1090,8 @@ export const baselineCards: BaselineCard[] = [
     ],
     "sourceAnchor": "structured.md#page-78",
     "generation": {
-      "model": "databricks-gpt-5-6-luna",
-      "generatedAt": "2026-09-04T03:16:28.768Z",
+      "model": "gpt-5.6-terra",
+      "generatedAt": "2026-09-04T07:04:57.036Z",
       "method": "chapter-local extraction; human review required"
     },
     "id": "baseline-ch12-pitfall",
