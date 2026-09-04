@@ -91,11 +91,20 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
       flushList();
       continue;
     }
-    const heading = trimmed.match(/^(#{1,6})\s+(.+)$/);
+    const heading = trimmed.match(/^(#{1,6})(?:\s+|$)(.*?)(?:\s+#+)?$/);
     if (heading) {
       flushParagraph();
       flushList();
-      blocks.push({ kind: 'heading', level: heading[1].length, text: heading[2] });
+      blocks.push({ kind: 'heading', level: heading[1].length, text: heading[2].trim() });
+      continue;
+    }
+    const chineseHeading = trimmed.match(/^[一二三四五六七八九十百]+、\s*(.+)$/);
+    const subHeading = trimmed.match(/^（[一二三四五六七八九十百]+）\s*(.+)$/);
+    const labeledHeading = trimmed.match(/^【([^】]+)】$/);
+    if (chineseHeading || subHeading || labeledHeading) {
+      flushParagraph();
+      flushList();
+      blocks.push({ kind: 'heading', level: chineseHeading ? 2 : 3, text: chineseHeading?.[0] ?? subHeading?.[0] ?? labeledHeading?.[1] ?? trimmed });
       continue;
     }
     if (/^(?:---+|\*\*\*+)$/.test(trimmed)) {
@@ -104,8 +113,8 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
       blocks.push({ kind: 'rule' });
       continue;
     }
-    const unordered = trimmed.match(/^[-*+]\s+(.+)$/);
-    const ordered = trimmed.match(/^\d+[.)]\s+(.+)$/);
+    const unordered = trimmed.match(/^[-*+]\s*(.+)$/);
+    const ordered = trimmed.match(/^\d+[.)）]\s*(.+)$/);
     if (unordered || ordered) {
       const nextKind = unordered ? 'unordered-list' : 'ordered-list';
       flushParagraph();
@@ -145,10 +154,14 @@ export function renderHighlightedText(text: string, query: string, render: (part
 export function InlineMarkdown({ text, query = '' }: { text: string; query?: string }) {
   const parts = text.split(inlineToken);
   return <>{parts.map((part, index) => {
-    const highlighted = renderHighlightedText(part, query, (item, itemIndex) => item.matched ? <mark key={`${index}-${itemIndex}`}>{item.text}</mark> : item.text);
-    if (/^\*\*.*\*\*$/.test(part) || /^__.*__$/.test(part)) return <strong key={index}>{highlighted}</strong>;
-    if (/^`.*`$/.test(part)) return <code key={index}>{highlighted}</code>;
-    if (/^\*.*\*$/.test(part) || /^_.*_$/.test(part)) return <em key={index}>{highlighted}</em>;
+    const strong = /^\*\*(.*)\*\*$/.exec(part) || /^__(.*)__$/.exec(part);
+    const code = /^`(.*)`$/.exec(part);
+    const emphasis = /^\*(.*)\*$/.exec(part) || /^_(.*)_$/.exec(part);
+    const content = strong?.[1] ?? code?.[1] ?? emphasis?.[1] ?? part;
+    const highlighted = renderHighlightedText(content, query, (item, itemIndex) => item.matched ? <mark key={`${index}-${itemIndex}`}>{item.text}</mark> : item.text);
+    if (strong) return <strong key={index}>{highlighted}</strong>;
+    if (code) return <code key={index}>{highlighted}</code>;
+    if (emphasis) return <em key={index}>{highlighted}</em>;
     return <span key={index}>{highlighted}</span>;
   })}</>;
 }

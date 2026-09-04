@@ -1,4 +1,5 @@
 import { defaultQuestions, type Question } from '../content';
+import { REQUIRED_MODEL } from './ai';
 
 const key = 'env867-progress';
 export type MemoryState = 'again' | 'hard' | 'good' | 'easy';
@@ -32,18 +33,22 @@ export const initialProgress: Omit<Progress, 'questions'> = {
   read: [], answers: {}, grades: {}, memory: {}, chapterReview: {}, activity: {},
   reading: { chapterId: '第一章 环科绪论部分与环工绪论部分', pageNumber: 4 },
   chapterProgress: {},
-  settings: { baseUrl: 'https://wawapii.com', apiKey: '', model: 'databricks-gpt-5-6-luna' },
+  settings: { baseUrl: 'https://wawapii.com', apiKey: '', model: REQUIRED_MODEL },
 };
 
 export function loadProgress(seed: Question[]): Progress {
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null') as Partial<Progress> | null;
+    const chapterReview = Object.fromEntries(Object.entries(saved?.chapterReview || {}).map(([chapter, review]) => [chapter, {
+      ...(review as ChapterReview),
+      queue: [...new Set((review as ChapterReview).queue || [])],
+    }]));
     return {
       ...initialProgress,
       ...saved,
       questions: saved?.questions || seed,
       memory: saved?.memory || {},
-      chapterReview: saved?.chapterReview || {},
+      chapterReview,
       activity: saved?.activity || {},
       reading: {
         ...initialProgress.reading,
@@ -51,7 +56,7 @@ export function loadProgress(seed: Question[]): Progress {
         pageNumber: Math.max(1, Number(saved?.reading?.pageNumber) || 1),
       },
       chapterProgress: saved?.chapterProgress || {},
-      settings: { ...initialProgress.settings, ...saved?.settings, model: 'databricks-gpt-5-6-luna' },
+      settings: { ...initialProgress.settings, ...saved?.settings, model: REQUIRED_MODEL },
     };
   } catch { return { ...initialProgress, questions: seed }; }
 }

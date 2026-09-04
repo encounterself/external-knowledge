@@ -22,7 +22,14 @@ const curatedCards: Card[] = [
  {id:'c7',title:'监测先问结果要支持什么决定',chapter:'governance',tags:['监测','质量保证'],body:'监测方案应先明确管理问题和决策用途，再确定指标、点位、频次、方法、质量控制和结果解释，避免只堆积数据。'},
  {id:'c8',title:'清洁生产把控制点前移',chapter:'governance',tags:['清洁生产','3R'],body:'优先从源头减量、过程优化和资源效率入手，再考虑末端治理；用生命周期和 3R 原则避免把污染转移到另一介质。'},
 ];
-export const cards: Card[] = [...baselineCards, ...curatedCards];
+export function mergeCards(...groups: Card[][]): Card[] {
+  const byId = new Map<string, Card>();
+  for (const group of groups) {
+    for (const card of group) if (!byId.has(card.id)) byId.set(card.id, card);
+  }
+  return [...byId.values()];
+}
+export const cards: Card[] = mergeCards(baselineCards, curatedCards);
 export const defaultQuestions: Question[] = [
  {id:'q1',title:'简述环境容量与环境自净能力的关系。',type:'简答题',chapter:'intro',difficulty:'基础',answer:'环境容量是特定条件下环境可承受污染负荷的限度，自净能力是环境通过物理、化学、生物过程降低污染影响的能力。自净能力影响容量，但容量还受环境功能、污染物性质和质量目标制约。',points:['定义两个概念','说明自净能力影响容量','补充情境条件'],status:'approved'},
  {id:'q2',title:'以富营养化为例，说明水污染治理的答题链条。',type:'论述题',chapter:'water',difficulty:'重点',answer:'从外源氮磷输入诊断开始，监测并核算负荷，优先削减外源；再分析水华、缺氧和生态后果，必要时处理底泥内源释放，最后建立监测和长期管理。',points:['外源诊断与负荷核算','机制和生态后果','外源优先、内源补充','监测管理闭环'],status:'approved'},

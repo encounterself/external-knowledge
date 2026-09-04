@@ -1,6 +1,6 @@
 import { bookChapters, bookPages } from '../book-index';
 import type { Progress } from './storage';
-import { requestChatCompletion } from './ai';
+import { requestChatCompletion, REQUIRED_MODEL } from './ai';
 
 export type CodexMessage = { role: 'system' | 'user' | 'assistant' | 'tool'; content: string; tool_call_id?: string; name?: string; tool_calls?: Array<{ id: string; type?: 'function'; function: { name: string; arguments: string } }> };
 export type CodexEvent = { type: 'tool'; name: string; status: 'running' | 'complete'; detail?: string };
@@ -13,7 +13,7 @@ const toolDefinitions = [
   { type: 'function', function: { name: 'memory_inspect', description: 'Inspect local learning progress metadata.', parameters: { type: 'object', properties: {} } } },
 ];
 
-export const REQUIRED_CODEX_MODEL = 'databricks-gpt-5-6-luna';
+export const REQUIRED_CODEX_MODEL = REQUIRED_MODEL;
 
 function localContentSearch(query: string) {
   const normalized = query.trim().toLowerCase();
