@@ -12,26 +12,46 @@ export type MemoryItem = {
   repetitions: number;
   lastFeedback?: MemoryState;
 };
+export type ChapterReview = { queue: string[]; paused: boolean; completed: boolean; completedAt?: string };
+export type ReadingProgress = { chapterId: string; pageNumber: number };
+export type ChapterReadingProgress = { pageNumber: number; percent: number; lastReadAt: string; completedAt?: string };
 export type Progress = {
   read: string[];
   answers: Record<string, string>;
   grades: Record<string, string>;
   questions: Question[];
   memory: Record<string, MemoryItem>;
+  chapterReview: Record<string, ChapterReview>;
+  activity: Record<string, number>;
+  reading: ReadingProgress;
+  chapterProgress: Record<string, ChapterReadingProgress>;
   settings: { baseUrl: string; apiKey: string; model: string };
 };
 
 export const initialProgress: Omit<Progress, 'questions'> = {
-  read: [], answers: {}, grades: {}, memory: {},
-  settings: { baseUrl: 'https://wawapii.com', apiKey: '', model: 'gpt-5.6-terra' },
+  read: [], answers: {}, grades: {}, memory: {}, chapterReview: {}, activity: {},
+  reading: { chapterId: '第一章 环科绪论部分与环工绪论部分', pageNumber: 4 },
+  chapterProgress: {},
+  settings: { baseUrl: 'https://wawapii.com', apiKey: '', model: 'databricks-gpt-5-6-luna' },
 };
 
 export function loadProgress(seed: Question[]): Progress {
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null') as Partial<Progress> | null;
     return {
-      ...initialProgress, ...saved, questions: saved?.questions || seed,
-      memory: saved?.memory || {}, settings: { ...initialProgress.settings, ...saved?.settings, model: 'gpt-5.6-terra' },
+      ...initialProgress,
+      ...saved,
+      questions: saved?.questions || seed,
+      memory: saved?.memory || {},
+      chapterReview: saved?.chapterReview || {},
+      activity: saved?.activity || {},
+      reading: {
+        ...initialProgress.reading,
+        ...saved?.reading,
+        pageNumber: Math.max(1, Number(saved?.reading?.pageNumber) || 1),
+      },
+      chapterProgress: saved?.chapterProgress || {},
+      settings: { ...initialProgress.settings, ...saved?.settings, model: 'databricks-gpt-5-6-luna' },
     };
   } catch { return { ...initialProgress, questions: seed }; }
 }

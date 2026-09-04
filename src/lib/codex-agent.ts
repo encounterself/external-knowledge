@@ -1,5 +1,6 @@
 import { bookChapters, bookPages } from '../book-index';
 import type { Progress } from './storage';
+import { requestChatCompletion } from './ai';
 
 export type CodexMessage = { role: 'system' | 'user' | 'assistant' | 'tool'; content: string; tool_call_id?: string; name?: string; tool_calls?: Array<{ id: string; type?: 'function'; function: { name: string; arguments: string } }> };
 export type CodexEvent = { type: 'tool'; name: string; status: 'running' | 'complete'; detail?: string };
@@ -12,7 +13,7 @@ const toolDefinitions = [
   { type: 'function', function: { name: 'memory_inspect', description: 'Inspect local learning progress metadata.', parameters: { type: 'object', properties: {} } } },
 ];
 
-const requiredModel = 'gpt-5.6-terra';
+export const REQUIRED_CODEX_MODEL = 'databricks-gpt-5-6-luna';
 
 function localContentSearch(query: string) {
   const normalized = query.trim().toLowerCase();
@@ -46,12 +47,10 @@ async function executeTool(name: string, args: Record<string, string>, progress:
 
 export async function runCodexAgent(baseUrl: string, apiKey: string, model: string, prompt: string, progress: Progress, onEvent: (event: CodexEvent) => void) {
   if (!baseUrl.trim() || !apiKey.trim()) throw new Error('请在接口设置中配置 Base URL 和 API Key，或使用本地 Codex 配置启动 API 代理。');
-  if (model !== requiredModel) throw new Error(`仅允许使用模型 ${requiredModel}。`);
+  if (model !== REQUIRED_CODEX_MODEL) throw new Error(`仅允许使用模型 ${REQUIRED_CODEX_MODEL}。`);
   const messages: CodexMessage[] = [{ role: 'system', content: '你是 867 环境学项目内的 Codex。优先使用本地 Skill 和本地内容；网页导入只能生成草稿，所有写入必须请求审批。只操作学习平台资源。' }, { role: 'user', content: prompt }];
   for (let attempt = 0; attempt < 4; attempt += 1) {
-    const response = await fetch(`${baseUrl.replace(/\/$/, '')}/chat/completions`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` }, body: JSON.stringify({ model, messages, tools: toolDefinitions, temperature: 0.2 }) });
-    if (!response.ok) throw new Error(`Codex API 请求失败（${response.status}）`);
-    const data = await response.json() as { choices?: Array<{ message?: { role: 'assistant'; content?: string; tool_calls?: Array<{ id: string; function: { name: string; arguments: string } }> } }> };
+    const data = await requestChatCompletion(baseUrl, apiKey, { model, messages, tools: toolDefinitions, temperature: 0.2 }) as { choices?: Array<{ message?: { role: 'assistant'; content?: string; tool_calls?: Array<{ id: string; function: { name: string; arguments: string } }> } }> };
     const message = data.choices?.[0]?.message;
     if (!message) throw new Error('Codex API 没有返回有效消息。');
     if (!message.tool_calls?.length) return message.content || 'Codex 没有返回文字内容。';
